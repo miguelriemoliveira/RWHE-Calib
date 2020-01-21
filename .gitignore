@@ -1,3 +1,6 @@
 #Folder
 /[Ff]igure/
 *.png
+
+#gedit files
+*~
