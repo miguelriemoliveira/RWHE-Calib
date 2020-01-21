@@ -10,9 +10,9 @@ Config=H2EConfiguration;
 
 %% Load Dataset
 DatasetName='kuka_2'; % CS_synthetic_1,'kuka_%d','Custom'      NOTE: %d should be replaced with the dataset number
-calibImgPath=[pwd,'\Datasets\',DatasetName,'\'];
+calibImgPath=[pwd,'/Datasets/',DatasetName,'/'];
 squareSize=getSquareSize4dataset(DatasetName); % in meters   
-robotPosesOrig=load([pwd,'\Datasets\',DatasetName,'\RobotPoses.mat']); % position should be in meters
+robotPosesOrig=load([pwd,'/Datasets/',DatasetName,'/RobotPoses.mat']); % position should be in meters
 %% Compute Camera Intrinsics
 [cameraParams, UndistoredImgNPts,OrigImgNPts,imagesUsed, camPoses, estimationErrors,Worldpts] = CalibrateIntrinsics(calibImgPath, squareSize,Config);
 % figure, showExtrinsics(cameraParams);  % 

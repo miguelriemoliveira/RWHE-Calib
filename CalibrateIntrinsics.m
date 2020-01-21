@@ -20,7 +20,7 @@ imagePointsO=imagePoints;
 worldPoints = generateCheckerboardPoints(boardSize, squareSize);
 
 % Load one image to get size
-img = imread([calibImgPath,'\',calibImgNames{1}]);
+img = imread([calibImgPath,'/',calibImgNames{1}]);
 imgSize = size(img);
 
 % Calibrate the camera
@@ -48,7 +48,7 @@ imgSize = size(img);
     for i = 1:total
         waitbar(i/total, h, ['Computing extrinsics for image: ' num2str(i) ' of ' num2str(total)]);
         if imagesUsedErrors(i)
-            orgImg = imread([calibImgPath,'\',calibImgNames{i}]);
+            orgImg = imread([calibImgPath,'/',calibImgNames{i}]);
             
             
 %             [img, newOrigin] = undistortImage(orgImg, cameraParams, 'OutputView', 'full');
